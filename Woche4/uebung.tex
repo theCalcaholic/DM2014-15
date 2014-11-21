@@ -1,0 +1,58 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{ulem}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage{titlesec}
+
+% custom commands
+\newcommand{\leadingzero}[1]{\ifnum #1<10 0#1\else#1\fi}
+\newcommand{\gerdate}[3]{\leadingzero{#1}.\leadingzero{#2}.\leadingzero{#3}}
+\newcommand{\gertoday}{\gerdate{\the\day}{\the\month}{\the\year}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+\pagestyle{fancy}
+
+\lhead{Tobias Knöppler}
+\chead{}
+\rhead{\gertoday}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\setlength{\mathindent}{0pt}
+
+% document specific settings
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{\arabic{section}. \alph{subsection})}
+\renewcommand{\thesubsubsection}{\roman{subsubsection})}
+\titleformat{\subsubsection}[runin]{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+\title{ALA - Hausaufgaben zum 8. Mai 2014 (Blatt 04)}
+\author{}
+\date{\gertoday}
+\begin{document}
+\maketitle
+
+\section{}
+für $n = 0$: $\{\emptyset\}$; Die Menge der Teilmengen von dieser Menge ist: $\{\{\emptyset\}\}$ und besitzt damit $1 = 2^0$ Teilmengen\\ \\
+
+\textbf{Induktionsanfang:} Es existiert ein n, für das jede n-elementige Menge genau $2^n$ Teilmengen hat.\\
+\emph{Beweis:} für $M_{n_0} = 1$: $\{a\}$; Die Menge der Teilmengen von dieser Menge ist: $\{\{\emptyset\},\{a\}\}$ und besitzt damit $2 = 2^1$ Teilmengen.\\
+\textbf{Induktionsschritt:}\\
+\emph{Induktionsannahme:} $\forall (M_n)_{n>n_0} (|\{x|x \subset M_n\}|  = 2^n \rightarrow |\{y|y \subset M_{n+1}\}| = 2^{n+1})$\\
+\emph{Beweis:}
+\begin{flalign}
+    |M_n| = \sum\limits_{i = 1}^{n} = (\matrix{n##i)
+\end{flalign}
+
+\end{document}

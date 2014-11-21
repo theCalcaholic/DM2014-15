@@ -1,0 +1,142 @@
+\documentclass[11pt, oneside]{scrartcl}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[bottom=6em]{geometry}
+\geometry{a4paper}                   		% ... or a4paper or a5paper or ... 
+\usepackage{titling}
+
+\setlength{\droptitle}{-10em}   % This is your set screw
+\setlength{\footskip}{4em}
+
+
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+%\usepackage{graphicx}				% Use pdf, png, jpg, or epsÂ§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{german}
+%\usepackage{tikz}
+%\usetikzlibrary{arrows}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+%SetFonts
+
+%SetFonts
+
+% meine Hilfstabelle
+% ------------------------
+% \neg - nicht
+% \vee - oder
+% \wedge - und
+% \in - ist element von
+% \exists - es existiert
+% \forall - drei alle
+% \subset / \subseteq - Teilmenge von
+% \supset / \supseteq - umgekehrt
+% \rightarrow - Implikation
+% \leftrightarrow - "aquivalenz
+% -- die beiden oben mit R und L (großen Anfangsbuchstaben) auch als Doppelpfeile
+% \mapsto - Zuweisung
+%
+% Syntax: A $\leftrightarrow$ B oder  so (mit $ Symbolen klammern!)
+
+
+\title{Mathematik I}
+\subtitle{Hausaufgaben zum 20. und 21. November 2014}
+\author{Thomas Vogt, 6687486 \and Tobias Knöppler, 6523815}
+\date{}
+
+\lhead{Vogt / Knöppler}
+\rhead{6687486 / 6523815}
+
+
+\begin{document}
+\maketitle
+\section*{Aufgabe 1}
+
+\subsection*{a}
+(dot)
+
+\subsection*{b}
+Um Reflexivität zu erreichen:
+(a,a), (b,b), (c,c), (d,d), (e,e), (f,f)
+
+Und um Transitivität zu erreichen:
+(a,c), (a,d), (b,d), (a,f), (b,e), (a,e)
+
+\subsection*{c}
+
+\subsection*{d}
+Da wir keine Kanten entfernen und alle Knoten miteinander zusammenhängen, gibt es nur eine Äquivalenzklasse, in der alle Knoten miteinander verbunden sind, die Paare sind also:
+
+(a,a), (a,b), (a,c), ... (a,f), (b,a), (b,b), ..., (f,a), (f,b), (f,c), (f,d), (f,f)
+
+
+\section*{Aufgabe 2}
+
+\subsection*{a}
+(dot)
+
+\subsection*{b}
+Alle reflexiven Paare (a,a), (b,b), (c,c), (d,d), (e,e) und (f,f) sowie das Paar (b,d) um Transitivität herzustellen.
+
+\subsection*{c}
+(dot)
+
+\subsection*{d}
+Alle aus (b) sowie die symmetrischen Paare (a,b), (d,a), (d,b), (f,e)
+
+\section*{Aufgabe 3}
+
+\subsection*{a}
+Alle reflexiven Paare (a,a), (b,b), (c,c) und (d,d), alle symmetrischen Paare (b,a) und (d,c) sowie, um die Transitivität zu unterbinden, (b,c) und (c,b).
+
+\subsection*{b}
+Nur die reflexiven Paare (s.o.) hinzufügen, denn transitiv ist R schon und symmetrisch ist R nicht.
+
+\subsection*{c}
+Nur die symmetrischen Paare (s.o.) hinzufügen, denn transitiv ist R schon und reflexiv ist R nicht.
+
+\section*{Aufgabe 4}
+(1,1), (1,2), (1,3), (1,4), (1,6), (1,8), (1,12, (1,24),\\
+(2,2), (2,4), (2,6), (2,8), (2,12), (2,24),\\
+(3,3), (3,6), (3,12), (3,24),\\
+(4,4), (4,8), (4,12), (4,24),\\
+(6,6), (6,12), (6,24),\\
+(8,8), (8,24),\\
+(12,12), (12,24),\\
+(24,24)
+
+(dot)
+
+\section*{Aufgabe 5}
+
+\subsection*{a}
+digraph {
+{} -> {1};
+{} -> {2};
+{} -> {1,2};
+{1} -> {1,2};
+{2} -> {1,2};
+}
+
+\subsection*{b}
+ORDNUNG! (von unten nach oben wachsen, 0 ist unten!)
+graph {
+{} -- {1};
+{} -- {2};
+{} -- {3};
+{1} -- {1,2};
+{1} -- {1,3};
+{2} -- {1,2};
+{2} -- {2,3};
+{3} -- {1,3};
+{3} -- {2,3};
+{1,2} -- {1,2,3};
+{1,3} -- {1,2,3};
+{2,3} -- {1,2,3};
+}
+
+\end{document}

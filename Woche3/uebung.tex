@@ -1,0 +1,148 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{ulem}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage{titlesec}
+
+% custom commands
+\newcommand{\leadingzero}[1]{\ifnum #1<10 0#1\else#1\fi}
+\newcommand{\gerdate}[3]{\leadingzero{#1}.\leadingzero{#2}.\leadingzero{#3}}
+\newcommand{\gertoday}{\gerdate{\the\day}{\the\month}{\the\year}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+\pagestyle{fancy}
+
+\lhead{Tobias Knöppler}
+\chead{}
+\rhead{\gertoday}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\setlength{\mathindent}{0pt}
+
+% document specific settings
+%\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{\arabic{section}. \alph{subsection})}
+\renewcommand{\thesubsubsection}{\roman{subsubsection})}
+\titleformat{\subsubsection}[runin]{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+\title{DM - Hausaufgaben zum 7. November 2014 (Blatt 03)}
+\author{}
+\date{\gertoday}
+\begin{document}
+\maketitle
+
+\section{}
+\subsection{}%subsection name}\label{label}
+\[
+    A(n): 1 \cdot 2^1 + 2 \cdot 2^2 + 3 \cdot 2^3 + \dotsb + n \cdot 2^n = (n - 1) \cdot 2^{n+1} + 2 = \sum\limits_{i = 1}^{n} i \cdot 2^i
+\]
+\subsection{}%subsubsection name}\label{label}
+\begin{flalign*}
+    A(1)&: 1 \cdot 2^1 = 2 = 0 + 2 = (1-1) \cdot 2^{1+1} + 2\\
+    A(2)&: 1 \cdot 2^1 + 2 \cdot 2^2 = 10 = 8 + 2 = 2^3 + 2 = (2-1) \cdot 2^{2+1} + 2\\
+    A(3)&: 1 \cdot 2^1 + 2 \cdot 2^2 + 3 \cdot 2^3 = 34 = 2 \cdot 16 + 2 = 2 \cdot 2^4 + 2 = (3-1) \cdot 2^{3+1} + 2
+\end{flalign*}
+\subsection{}%subsection name}\label{label}
+\textbf{I) Induktionsanfang:}\\
+\emph{Behauptung:} $(\exists n)_{n \in \N}(A(n))$\\
+\emph{Beweis:} siehe 1a)\\\\
+\textbf{II) Induktionsschritt:}\\
+\emph{Induktionsannahme:} $(\forall n)_{n \in \N}: (A(n) \rightarrow A(n+1))$\\
+\emph{Beweis:}
+\begin{flalign*}
+    &\sum\limits_{i=1}^{n+1} i \cdot 2^i = (n+1) \cdot 2^{n+1} + \sum\limits_{i=1}^n i \cdot 2^i = (n+1) \cdot 2^{n+1} + (n-1) \cdot 2^{n+1} + 2 = (n+1 + n-1) \cdot 2^{n+1} + 2\\
+    &\Leftrightarrow 2n \cdot 2^{n+1} + 2 = n \cdot 2^{n+1 + 1} + 2
+\end{flalign*}
+Wegen I und II ist A(n) damit für alle $n \in \N$ bewiesen. $\square$
+
+\section{}%section name}\label{label}
+\subsection{}%subsection name}\label{label}
+\begin{flalign*}
+    B(1) &: \sum\limits_{k=1}^1 (-1)^k k^2 = -1 \cdot 1 = -1 = -1 \cdot \frac{2}{2} = (-1)^1 \frac{1(1 + 1)}{2}\\
+    B(1) &: \sum\limits_{k=1}^2 (-1)^k k^2 = -1 + (-1)^2 2^2 = 3 = 1 \cdot \frac{6}{2} = (-1)^2 \frac{2(2 + 1)}{2}\\
+    B(1) &: \sum\limits_{k=1}^3 (-1)^k k^2 = 3 + -1 \cdot 9 = -6 = -1 \cdot 6 =  -1 \cdot \frac{12}{2} = (-1)^3 \frac{3(3 + 1)}{2}
+\end{flalign*}
+\subsection{}%subsection name}\label{label}
+\[
+    B(n): \sum\limits_{k=1}^n (-1)^k k^2 = (-1)^1 \cdot 1^2 + (-1)^2 \cdot 2^2 + \dotsb + (-1)^{n-1} \cdot (n-1)^2 + (-1)^n \cdot n^2
+\]
+\subsection{}%subsection name}\label{label}
+\textbf{I) Induktionsanfang:}\\
+\emph{Behauptung:} $(\exists n)_{n \in \N}(A(n))$\\
+\emph{Beweis:} siehe 2a)\\ \\
+\textbf{II) Induktionsschritt:}\\
+\emph{Induktionsannahme:} $(\forall n)_{n \in \N} (B(n) \rightarrow B(n+1)$\\
+\emph{Beweis:}
+\begin{flalign*}
+    &\sum\limits_{k=1}^{n+1} (-1)^k k^2 = (-1)^{n+1} (n+1)^2 + \sum\limits_{k=1}^n (-1)^k k^2 = (-1)^{n+1} (n+1)^2 + (-1)^n \frac{n(n+1)}{2}\\
+    &\Leftrightarrow (-1)^n \cdot \left(-1 \cdot (n + 1)^2 + \frac{n(n+1)}{2}\right) = (-1)^n \cdot \left(-\frac{2(n + 1)^2}{2} + \frac{n(n+1)}{2}\right)\\
+    &\Leftrightarrow (-1)^n \cdot \left(\frac{-2(n^2 + 2n + 1) + n^2 + n)}{2}\right) = (-1)^n \cdot \left(\frac{-2n^2 - 4n - 2 + n^2 + n)}{2}\right)\\
+    &\Leftrightarrow (-1)^n \cdot \left(\frac{-n^2 - 3n - 2}{2}\right) = (-1)^n \cdot \left(-1 \cdot \frac{n^2 + 3n + 2}{2}\right) = (-1)^n \cdot \left(-1 \cdot \frac{(n^2 + 2n) + n + 2}{2}\right)\\
+    &\Leftrightarrow (-1)^n \cdot \left(-1 \cdot \frac{n( n + 2) + n + 2}{2}\right) =  (-1)^n \cdot \left(-1 \cdot \frac{(n + 1)(n + 2)}{2}\right) = (-1)^{n+1} \cdot \frac{(n+1)(n + 1 + 1)}{2}
+\end{flalign*}
+
+Wegen I und II ist B(n) damit für alle $n \in \N$ bewiesen. ~ $\square$
+
+\section{}%section name}\label{label}
+\textbf{I) Induktionsanfang:}\\
+\emph{Behauptung:} $(\exists n)_{n \in \N_0}(6|(7^n - 1))$.\\
+\emph{Beweis:} $6|(7^0 - 1) = 6|(1-1) = 6|0$\\ \\
+\textbf{II) Induktionsschritt:}\\
+\emph{Induktionsannahme (IA):} $(\forall n)_{n \in \N_0} (6|(7^n - 1) \rightarrow (6|(7^{n+1} - 1))$\\
+\emph{Beweis:}
+\begin{flalign*}
+    7^{n + 1} - 1 = 7^n \cdot 7 - 1 = 7^n \cdot 6 + 7^n - 1 = (7^n \cdot 6) + (7^n - 1)
+\end{flalign*}
+Da laut Induktionsannahme $6|(7^n - 1)$ gilt und $\frac{7^n \cdot 6}{6} = 7^n \rightarrow 6|(7^n \cdot 6)$, gilt auch $6|(7^n \cdot 6 + 7^n - 1)$, womit die Behauptung $(\exists n)_{n \in \N_0}(6|(7^n - 1))$ bewiesen ist. $\square$
+
+\section{}%section name}\label{label}
+i) Es seien $f(x) = 5x - 7$ und $g(x) = 2^x$ zwei Funktionen $\R \rightarrow \R$, so gilt\\ $(\forall n)_{n \in \N} (f(n) < g(n) \rightarrow 5x-7 < 2^x)$.
+\begin{flalign*}
+    f'(x) &= 5\\
+    g(n) &= 2^n = e^{ln(2) \cdot n}\\
+    \Rightarrow g'(n) &= ln(2) \cdot e^{ln(2) \cdot n}
+\end{flalign*}
+Daraus folgt:
+\begin{flalign*}
+    &g'(x) = f'(x)\\
+    \Leftrightarrow& 5 = ln(2) \cdot e^{ln(2) \cdot x} \Leftrightarrow e^{ln(2) \cdot x} = 5/ln(2)\\
+    \Leftrightarrow& ln(2) \cdot x = ln(5/ln(2)) \Leftrightarrow x = ln(5/ln(2))/ln(2)
+\end{flalign*}
+Da $\lceil ln(5/ln(2))/ln(2) \rceil = 3$ und $g'(3) > 5 = f'(3)$ gilt auch $(\forall x)_{x > 3}(g'(x) > f'(x))$. Aus diesem Grund und wegen i) gilt also: $(\forall n)_{n \in \N; n > 3} (5n - 7 < 2^n \rightarrow 5(n+1) - 7 < 2^{n+1})$.\\
+Daraus und aus den folgenden Ungleichungen folgt also:\\
+$(\forall n)_{n \in \N; n \neq 3; n \neq 4}( 5n - 7 < 2^n )$. $\square$
+\begin{flalign*}
+    5 \cdot 1 - 7 = -2 &< 2 = 2^1\\
+    5 \cdot 2 - 7 = 3 &< 4 = 2^2\\
+    5 \cdot 3 - 7 = 8 &\nless 8 = 2^3\\
+    5 \cdot 4 - 7 = 13 &\nless 16 = 2^4\\
+    5 \cdot 5 - 7 = 18 &< 32  = 2^5
+\end{flalign*}
+
+\section{}%section name}\label{label}
+\textbf{Behauptung:} $(\forall n)_{n \in \N; n \geq 4}(2^n < n!)$\\
+\emph{Beweis durch Induktion:}\\
+\textbf{I) Induktionsanfang}\\
+\emph{Behauptung:} $(\exists n)_{n \in \N; n \geq 4}(2^n < n!)$\\
+\emph{Beweis:} $2^4 = 16 < 24 = 4 \cdot 3 \cdot 2 = 4!$\\
+\textbf{II) Induktionsschritt}\\
+\emph{Induktionsannahme:} $(\forall n)_{n \in \N; n \geq 4}(2^n < n! \rightarrow 2^{n+1} < (n+1)!)$\\
+\emph{Beweis:}
+\begin{flalign*}
+    2^{n+1} < (n+1)! \Leftrightarrow 2 \cdot 2^n < (n+1) \cdot n!
+\end{flalign*}
+Da wir angenommen haben, dass $2^n < n!$, gilt also $2 \cdot 2^n  = 2^{n+1} < (n+1)! = (n+1) \cdot n!$ zumindest dann, wenn $2 < n+1$, was durch die obige Annahme von $n \geq 4$ gegeben ist. Damit ist bewiesen, dass $(\forall n)_{n \in \N; n \geq 4}(2^n < n!)$. $\square$
+
+\end{document}

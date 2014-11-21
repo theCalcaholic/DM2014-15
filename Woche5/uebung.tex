@@ -1,0 +1,128 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{ulem}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage{titlesec}
+
+% custom commands
+\newcommand{\leadingzero}[1]{\ifnum #1<10 0#1\else#1\fi}
+\newcommand{\gerdate}[3]{\leadingzero{#1}.\leadingzero{#2}.\leadingzero{#3}}
+\newcommand{\gertoday}{\gerdate{\the\day}{\the\month}{\the\year}}
+\newcommand*{\bfrac}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+\pagestyle{fancy}
+
+\lhead{Tobias Knöppler (Matr-Nr: 6523815), Thomas Vogt (Matr-Nr.: 6687486)}
+\chead{}
+\rhead{\gertoday}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\setlength{\mathindent}{0pt}
+
+% document specific settings
+%\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{\arabic{section}. \alph{subsection})}
+\renewcommand{\thesubsubsection}{\roman{subsubsection})}
+\titleformat{\subsubsection}[runin]{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+\title{ALA - Hausaufgaben zum 8. Mai 2014 (Blatt 04)}
+\author{Tobias Knöppler (Matr-Nr: 6523815), Thomas Vogt (Matr-Nr.: 6687486)}
+\date{\gertoday}
+\begin{document}
+\maketitle
+
+
+\section{}
+\subsection{}%subsection name}\label{label}
+Diese Frage lässt sich als folgendes Problem beschreiben:\\
+Wie viele Möglichkeiten gibt es, 5 Elemente aus einer 6-elementigen Menge zu ziehen, wobei das jeweils gezogene Element nach dem Ziehen wieder zurückgelegt wird. Dabei wird auch die Reihenfolge der Elemente betrachtet.\\\\
+Die Lösung ist: $6^5 = 7776$.
+
+\subsection{}%subsection name}\label{label}
+Möchte man nun nur die Menge injektiven Abbildungen erfahren, so verfährt man wie in Aufgabe 1 a), mit dem Unterschied, dass die Elemente nach dem Ziehen nicht mehr zurückgelegt werden.\\\\
+Dann ist die Lösung: $6^{\underline{5}} = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 = 720$
+
+\section{}
+\subsection{}
+\[ {49 \choose 6} = \frac{49!}{6! (49-6)!} = 13983816 \] 
+
+\subsection{}
+Die L\"osung ist die Anzahl aller Teilmengen mit 498 plus die Anzahl der Teilmengen mit 499 plus jene mit 500 Elementen, ergo:
+
+\[ {500 \choose 498} + {500 \choose 499} + 2^{500} \] 
+
+\section{}
+
+\subsection{}%subsection name}\label{label}
+\begin{math}
+    (x + y)^{15} = \sum\limits_{i=0}^{15} {15 \choose i}x^{15-i}y^i
+    = {15 \choose 11}x^{15-11}y^{11} + \sum\limits_{i=0}^{13} {15 \choose i}x^{15-i}y^i = \frac{15^{\underline{11}}}{11!}x^{4}y^{11}\\
+    = \frac{15 \cdot 14 \cdot 13 \cdot 12}{4 \cdot 3 \cdot 2 \cdot 1}x^4y^{11} + \sum\limits_{i=0}^{13} {15 \choose i}x^{15-i}y^i = 1365 x^4y^{11} + \sum\limits_{i=0}^{13} {15 \choose i}x^{15-i}y^i\\
+\end{math}
+Damit ist der Koeffizient von $x^4y^{11}$ 1365.
+
+\subsection{}%subsection name}\label{label}
+Diese Frage entspricht dem folgenden Problem:\\
+Wie viele Möglichkeiten gibt es, aus einer 8-elementigen Menge 6 Elemente herauszunehmen, wobei die Reihenfolge der Elemente nicht wichtig ist und jedes Element nach dem Ziehen wieder zurückgelegt wird, bevor ein weiteres Element gezogen wird. ('Ziehen mit Zurücklegen, ungeordnet')\\
+\\
+Die Lösung ist: ${6 + 8 - 1 \choose 6} = {13 \choose 6} = \frac{13 \cdot 12 \cdot 11 \cdot 10 \cdot 9 \cdot 8}{6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1} = 1716$, d.h. es gibt 1716 Möglichkeiten, den Kasten auf diese Weise zu befüllen.
+
+\section{}
+Im orthographischen Sinn ist ein Wort eine durch Buchstabenfolge zwischen zwei Trennzeichen, es kommt also nur auf die Anzahl der Kombinationen an. Die Antworten werden in diesem Sinne gegeben, da Antworten unter Annahme des syntaktischen oder semantischen Sinnes in diesem Rahmen zu aufw\"andig w\"aren.
+
+\subsection{}
+Das Wort MATHEMATIK hat 10 Buchstaben in 7 Gruppen. Die Gruppen $g_1 = \{ M, M \}$, $g_2 = \{ A, A \}$ und $g_3 = \{ T, T \}$ haben jeweils zwei Elemente. Der Einfachheit halbe seien sie die Gruppen M, A, T genannt. Die Gruppen H, E, I, K haben jeweils ein Element.
+
+Daher ergibt sich:
+
+\[ n = \frac{10!}{2! * 2! * 2! * 1! * 1! * 1! * 1!} \]
+\[ n = \frac{10!}{2!^3 * 1!^4} \]
+\[ n = \frac{10!}{2^3} \]
+\[ n = \frac{10!}{2^3} \]
+\[ n = 453600 \]
+
+Es lassen sich also 453.600 Worte bilden.
+
+\subsection{}
+Gleicher L\"osungsansatz wie unter a). Das Wort CAPPUCCINO hat 10 Buchstaben in den Gruppen C (3x), P (2x) und A, U, I, N, O (je 1x) ergo:
+
+\[ n = \frac{10!}{3! * 2! * 1!^5} \]
+\[ n = \frac{10!}{6 * 2 * 1} \]
+\[ n = \frac{10!}{6 * 2 * 1} \]
+\[ n = 302400 \]
+
+Es lassen sich also 302.400 Worte bilden.
+
+\section{}
+\textbf{I) Induktionsanfang:}\
+\emph{Behauptung:} $(\exists n)_{n \geq 4}\left(\sum\limits_{i=4}^n {i \choose 4} = {n + 1 \choose n - 4}\right)$\\
+\emph{Beweis:} \[
+    \sum\limits_{i=4}^4 {i \choose 4} = {4 \choose 4} = \frac{4!}{4!} = 1 = \frac{5^{\underline{0}}}{0!} = {5 \choose 0} = {4 + 1 \choose 4 - 4}
+\]\\ \\
+\textbf{II) Induktionsschritt:}\\
+\emph{Induktionsannahme:} $(\forall n)_{n \geq 4}\left(\sum\limits_{i=4}^n {i \choose 4} = {n + 1 \choose n - 4} \rightarrow \sum\limits_{i=4}^{n+1} {i \choose 4} = {(n + 1) + 1 \choose (n + 1) - 4}\right)$\\
+\emph{Beweis:}\\
+\begin{math}
+    \sum\limits_{i=4}^{n+1} {i \choose 4} = {n+1 \choose 4} + \sum\limits_{i=4}^n {i \choose 4} \stackrel{IA}{=} {n+1 \choose 4} + {n + 1 \choose n - 4} = \frac{(n+1)!}{4! \cdot (n+1 - 4)!} + \frac{(n+1)!}{(n-4)! \cdot (n+1-n+4)!}\\
+    = \frac{(n+1)!}{4! \cdot (n-3)!} + \frac{(n+1)!}{(n-4)! \cdot (5)!}
+    = \frac{(n+1)!}{4! \cdot (n-3)!} + \frac{(n+1)!}{(n-4) \cdot (n-3)! \cdot 5 \cdot (4)!}
+    = \frac{(n+1)! \cdot (n-4) \cdot 5}{5! \cdot (n-4)!} + \frac{(n+1)!}{(n-4)! \cdot (5)!}\\
+    = \frac{(n+1)! \cdot (n-4) \cdot 5 + (n+1)!}{(n-4)! \cdot (5)!}
+    = \frac{(n+1)! \cdot ((n-4) \cdot 5 + 1)}{(n-4)! \cdot (5)!} \dots
+\end{math}
+
+\end{document}
+

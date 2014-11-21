@@ -1,0 +1,205 @@
+\documentclass[fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{ulem}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage{titlesec}
+\usepackage{ wasysym }
+% custom commands
+\newcommand{\leadingzero}[1]{\ifnum #1<10 0#1\else#1\fi}
+\newcommand{\gerdate}[3]{\leadingzero{#1}.\leadingzero{#2}.\leadingzero{#3}}
+\newcommand{\gertoday}{\gerdate{\the\day}{\the\month}{\the\year}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+\pagestyle{fancy}
+\lhead{Tobias Knöppler}
+\chead{}
+\rhead{\gertoday}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\setlength{\mathindent}{0pt}
+% document specific settings
+\renewcommand{\thesubsection}{\arabic{section}. \alph{subsection})}
+\renewcommand{\thesubsubsection}{\roman{subsubsection})}
+\titleformat{\subsubsection}[runin]{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\title{DM - Hausaufgaben zum 31. Oktober 2014 (Blatt 04)}
+\author{}
+\date{\gertoday}
+\begin{document}
+\maketitle
+\section{}
+\subsection{}
+\subsubsection{}
+Es gibt keine injektive Funktion $f: A \mapsto B$, da $\mid B \mid > \mid A \mid$.
+\subsubsection{}
+Ja, z.B.: 
+\begin{align*}
+    f: f(1) &= a\\
+    f(2) &= b\\
+    f(3) &= c
+\end{align*}
+\subsubsection{}
+Nein, da es keine injektive Funktion $A \mapsto B$ gibt, existiert auch keine bijektive Funktion $A \mapsto B$.
+\subsection{}
+\subsubsection{}
+Nein, da eine injektive Abbildung $A \mapsto B$ mit $\mid A \mid = \mid B \mid$ immer auch bijektiv sein muss.
+\subsubsection{}
+Ja, z.B. 
+\begin{flalign*}
+f: f(1) &= a\\
+f(2) &= b,c\\
+f(3) &= c
+\end{flalign*}
+\subsubsection{}
+Ja, z.B.
+\begin{flalign*}
+    f: f(1) &= a\\
+    f(2) &= b\\
+    f(3) &= c
+\end{flalign*}
+\subsection{}
+\subsubsection{}
+Ja, z.B.
+\begin{flalign*}
+    f: f(1) &= a\\
+    f(2) &= b\\
+    f(3) &= c
+\end{flalign*}
+\subsubsection{}
+Ja, z.B.
+\begin{flalign*}
+    f: f(1) &= a,b\\
+    f(2) &= b,c\\
+    f(3) &= d
+\end{flalign*}
+\subsubsection{}
+Ja, z.B.
+\begin{flalign*}
+    f: f(1) &= a,b\\
+    f(2) &= c\\
+    f(3) &= d
+\end{flalign*}
+\section{}
+\subsection{}
+f ist injektiv, da $\forall n (n \in \Z \Rightarrow 2n \in \Z)$.\\
+Beweis:\\
+\begin{enumerate}[I]
+\item Induktionsannahme: $ \exists n \in \Z (2n \in \Z)$\\
+    Beweis: $2 \cdot 1 = 2 \in \Z$
+\item Induktionsschritt:\\
+    Behauptung: $2n \in \Z \Rightarrow 2(n+1) \in \Z$\\
+    Beweis:
+    \[
+        2(x+1) = 2x +2
+    \]
+    \[
+        (2 \in \Z) \wedge (2x \in \Z) \Rightarrow 2x + 2 \in \Z ~\square
+    \]
+\end{enumerate}
+f ist nicht surjektiv, da es z.B. kein n gibt, für das gilt f(n) = 5.\\
+Beweis:\\
+Angenommen, es gelte: $\exists n (f(n)=5 \Rightarrow f(n) = 2 \cdot \frac{5}{2})$, dann wäre $n = \frac{5}{2} \notin \Z$, womit die Annahme, dass f surjektiv sei, zum Widerspruch geführt ist. $\square$\\\\
+f ist nicht bijektiv, da f nicht surjektiv ist.
+\subsection{}
+g ist injektiv, da $\forall n \in \Z (2n + 5 \in \Z)$.\\
+Beweis:\\
+\begin{enumerate}[I]
+    \item Induktionsannahme (IA): $\exists n \in \Z (2n + 5 \in \Z)\\
+        (n=1 \Leftrightarrow 2n + 5 = 7) \wedge (7 \in \Z) \Rightarrow \text{IA ist erfüllt für n = 1.}$
+    \item Induktionsschritt:\\
+        Behautptung: $(2n + 5 \in \Z) \Rightarrow (2(x+1) + 5 \in \Z)$\\
+        Beweis:
+        \[
+            2(n+1) + 5 = 2n +7 = 2n + 5 + 2
+        \]\[
+            (2n + 5 \in \Z) \wedge (2 \in \Z) \Rightarrow 2n + 7 \in \Z
+        \]
+    \item Induktionsschluss:\\
+        $(I) \wedge (II) \Rightarrow \forall n \in \Z (2n + 5 \in \Z)$\\
+        Daraus folgt, dass g injektiv ist. $\square$
+\end{enumerate}
+g ist nicht surjektiv, da $\exists n \notin \Z (2n + 5 \in \Z)$.\\
+Beweis:\\
+Angenommen, $2n + 5 = 6$.\\
+Dann gälte $n = \frac{6-5}{2} = \frac{1}{2} \notin \Z \Rightarrow \exists n \notin \Z (2n + 5 \in \Z)~ \square$
+\\
+g ist nicht bijektiv, da g nicht surjektiv ist.
+\subsection{}
+h ist nicht injektiv, da h(-2) = 9 = h(2).\\
+\\
+h ist nicht surjektiv, da $n \notin \Z \text{ für } (2n^2 + 5 = 2)$.\\
+Beweis:\\
+$n^2 + 5 = 2 \Leftrightarrow n^2 = -3 \Leftrightarrow n = \sqrt{3} \Rightarrow n \notin \Z~\square$.\\
+\\
+h ist nicht bijektiv, da h weder injektiv noch surjektiv ist.
+\section{}
+\subsection{}
+Behauptung: f ist injektiv.\\
+Beweis:\\
+Angenommen, f wäre nicht injektiv. Dann gäbe es $m, n \in \Z$ mit $m \neq n$, für die gälte:\\
+\begin{flalign*}
+f(m) &= f(n)\\
+\Rightarrow &\text{I}~~ m^2 - 5 = n^2 - 5 \Leftrightarrow m = \pm \sqrt{n^2} = \pm n =* -n\\
+&\text{II}~~ (m^2 - 2)^2 = (n - 2)^2\\
+&\text{m in II}~~ (-n - 2)^2 = (n - 2)^2\\
+&~~ n^2 + 4n + 4 = n^2 - 4n + 4\\
+&\qquad 4n = - 4n \Leftrightarrow 4 = -4 ~\text{\lightning}\\
+\\
+&\text{* gilt wegen der Annahme, dass m $\neq$ n seien.}
+\end{flalign*}
+Damit ist die Annahme, es gäbe $m, n \in \Z$ mit $m \neq n$, für die gilt: $f(m) = f(n)$ zum Widerspruch geführt und bewiesen, dass f injektiv ist. $\square$\\
+\\
+f ist nicht surjektiv, da es z.B. kein $m \in \Z$ gibt, für das gilt: $f(m) = (-7,4)$.\\
+Beweis:\\
+Angenommen, es gäbe ein $m \in \Z$, für das gilt: $f(m) = (-7, 4)$.\\
+Dann gälte:\\
+I  $m^2 - 5 = -7 \Leftrightarrow m = \pm \sqrt{-2}$\\
+II  $(m-2)^2 = 4 \Leftrightarrow m = 4$\\
+Da $m \neq 4 \sqrt{-2}$, ist die Annahme widerlegt, es gäbe ein $m \in \Z$ mit $f(m) = (-7, 4)$ und bewiesen, dass f nicht surjektiv ist. $\square$\\
+\\
+f ist nicht bijektiv, da f nicht surjektiv ist.
+\subsection{}
+g ist nicht injektiv, da $g(2,2) = 10 = g(2,-2)$.\\
+\\
+g ist surjektiv, da gilt: $\forall a \in \Z \exists n (g(0,n) = a)$.\\
+Beweis:\\
+Sei $m=0$. Dann gilt für $f(m,n) = -n$.\\
+Wegen $(n \in \Z \Rightarrow -n \in \Z)$ folgt somit $\forall a \in \Z \exists m \exists n (f(m,n) = a)$.\\
+Damit ist g surjektiv. $\square$\\
+\\
+g ist nicht bijektiv, da g nicht injektiv ist.
+\subsection{}
+h ist nicht surjektiv, da es keine $m,n \in \Z$ gibt, für die gilt: $f(m,n) = (2,-1)$.\\
+Beweis:\\
+Angenommen, es gäbe, $m,n \in \Z$, sodass $h(m,n) = (2,1)$, dann gälte:\\
+I   $3m - n = 2 \Leftrightarrow m = \frac{2-n}{3}$\\
+II  $-3m + n = 1$\\
+m in II  $-3 \cdot \frac{2-n}{3} + n = 1 \Leftrightarrow -2 + n + n = 1 \Leftrightarrow n = 1$\\
+n in I  $\frac{2-1}{3} = \frac{1}{3} \notin \Z \text{lightning}$\\
+Damit ist die Annahme, es existierten $m,n$, sodass $h(m,n) = (2,1)$, zum Widerspruch geführt und bewiesen, dass h nicht surjektiv ist.\\
+\\
+h ist nicht bijektiv, da h weder injektiv noch surjektiv ist.
+\section{}
+Behauptung: $\forall n \in \N (\sum\limits_{i=1}^{n} (2i-1) = n^2)$\\
+\begin{enumerate}[I]
+\item Induktionsanfang:\\
+    Behauptung: $\exists n (\sum\limits_{i=1}^{n}(2i-1) = n^2)$\\
+    Beweis: Es sei $n = 1$. Dann ist $\sum\limits_{i=1}^{i}(2i-1 = 2 \cdot 1 - 1 = (n+1)^2$. $\square$\\
+\item Induktionsschritt:\\
+    Induktionsannahme: $(\sum\limits_{i=1}^{n} (2i - 1) = n^2 \Rightarrow \sum\limits_{i = 1}^{n + 1}(2i-1) = (n+1)^2)$\\
+    Beweis:\\
+    $\sum\limits_{i=1}^{n+1}(2i-1) \Leftrightarrow 2(n+1) - 1 + \sum\limits_{i=1}^{n}(2i-1) \Leftrightarrow 2n + 1 + \sum\limits_{i=1}^{n}(2i-1) = (n+1)^2 = n^2 + 2n + 1 = n^2 + 2n + 1$\\
+    $\Leftrightarrow \sum\limits{i=1}{n}(2i-1) = n^2$ $\square$.
+\end{enumerate}
+\end{document} 
