@@ -4,6 +4,9 @@
 \usepackage[bottom=6em]{geometry}
 \geometry{a4paper}                   		% ... or a4paper or a5paper or ... 
 \usepackage{titling}
+\usepackage{dot2texi}
+\usepackage{tikz}
+\usepackage{shapes,arrows}
 
 \setlength{\droptitle}{-10em}   % This is your set screw
 \setlength{\footskip}{4em}
@@ -114,13 +117,34 @@ Nur die symmetrischen Paare (s.o.) hinzufügen, denn transitiv ist R schon und r
 \section*{Aufgabe 5}
 
 \subsection*{a}
-digraph {
-{} -> {1};
-{} -> {2};
-{} -> {1,2};
-{1} -> {1,2};
-{2} -> {1,2};
+\begin{dot2tex}[dot,options=-tmath --autosize --cache]
+\digraph G {
+rankdir = LR
+node[shape="none"]; start;
+node [shape="box", color="blue"]; q0;
+node [shape="circle",color="black"]; q_1 q_2 q_3;
+
+start -> q_0;
+q_0 -> q_1 [label="1"];
+q_1 -> q_0 [label="1"];
+
+q_1 -> q_2 [label="0"];
+q_2 -> q_1 [label="0"];
+
+q_2 -> q_3 [label="1"];
+q_3 -> q_2 [label="1"];
+
+q_3 -> q_0 [label="0"];
+q_0 -> q_3 [label="0"];
+
+%{} -> {1};
+%{} -> {2};
+%{} -> {1,2};
+%{1} -> {1,2};
+%{2} -> {1,2};
 }
+\end{dot2tex}
+
 
 \subsection*{b}
 ORDNUNG! (von unten nach oben wachsen, 0 ist unten!)
